@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #2a394f;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2a394f;
+        }  
+        img#deviceImage {
+            filter: brightness(0.6);
+        }   
+    </style>
+    <body>
+        <img src="dashboard.png" alt="Device Image" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" id="deviceImage">
+        <header style="background: linear-gradient(90deg, #2a394f, #1d2a3d); padding: 5px; text-align: center; border-radius: 10px;">
+                <h1 style="font-size: 30px; color: white; font-family: 'Arial', sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                  Add Devices
+                </h1>
+        </header>
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin-top: 20px;">
+            <form id="addDeviceForm" style="display: none; flex: 1;">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter device title" required>
+
+                <label for="deviceType">Device Type</label>
+                <select id="deviceType" name="deviceType" required>
+                    <option value="">Select a device type</option>
+                    <optgroup label="AC">
+                        <option value="Projector">Samsung</option>
+                        <option value="AppleTV">LG</option>
+                    </optgroup>
+                    <optgroup label="Projector">
+                        <option value="Projector">Sony</option>
+                        <option value="Projector">BenQ</option>
+                        <option value="Projector">LG</option>
+                    </optgroup>
+                    <optgroup label="AVR">
+                        <option value="AVR">Marantz</option>
+                        <option value="AVR">Denon</option>
+                    </optgroup>
+                    <optgroup label="TV">
+                        <option value="TV">LG</option>
+                        <option value="TV">Samsung</option>
+                        <option value="TV">Tata Sky</option>
+                    </optgroup>
+                    <optgroup label="AppleTV">
+                        <option value="AppleTV">AppleTV</option>
+                    </optgroup>
+                    <optgroup label="Lights">
+                        <option value="Lights">Lutron</option>
+                    </optgroup>
+                </select>
+
+                <label for="ipAddress">IP Address</label>
+                <input type="text" id="ipAddress" name="ipAddress" placeholder="e.g., 192.168.1.1" required>
+
+                <label for="macAddress">MAC Address</label>
+                <input type="text" id="macAddress" name="macAddress" placeholder="e.g., 00:1A:2B:3C:4D:5E" required>
+
+                <label for="port">Port</label>
+                <input type="text" id="port" name="port" placeholder="e.g., 8080" required>
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+                <label style="align-items:center; font-size: 15px;">
+                    <input type="checkbox" style="width: 15px; height: 15px; margin-right: 5px;">
+                    Global Power Command
+                </label>
+                <p style="font-size: 14px; color: #555; margin-top: -10px;">
+                    Allow this device to power on/off from the global power button
+                </p>
+                
+                <button type="submit">Add Device</button> 
+            </form>
+        </div>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const form = document.getElementById("addDeviceForm");
+                form.style.display = "block";
+            });
+        </script>
+    </body>
+</html>

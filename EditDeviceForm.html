@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #2a394f;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2a394f;
+        }  
+        img#deviceImage {
+            filter: brightness(0.6);
+        } 
+    </style>
+    <body>
+        <img src="dashboard.png" alt="Device Image" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" id="deviceImage">
+        <header style="background: linear-gradient(90deg, #2a394f, #1d2a3d); padding: 5px; text-align: center; border-radius: 10px;">
+            <h1 style="font-size: 30px; color: white; font-family: 'Arial', sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+              Edit Devices
+            </h1>
+        </header>
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin-top: 20px;">
+            <form id="editDeviceForm" style="display: none; max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+
+                <label for="editDevice">Choose your device</label>
+                <select id="editDeviceType" name="editDeviceType" required>
+                    <option value="">Select your device to edit</option>
+                    <optgroup label="TV">
+                        <option value="TV">Hall - Samsung Tv </option>
+                        <option value="TV">Bedroom1 - LG Tv</option>
+                        <option value="TV">Bedroom2 - Apple Tv</option>
+                    </optgroup>
+                    <optgroup label="AC">
+                        <option value="AC">Hall - AC</option>
+                        <option value="AC">Bedroom1 - AC</option>
+                        <option value="AC">Bedroom2 - AC</option>
+                    </optgroup>
+                    <optgroup label="Lamp">
+                        <option value="Lamp"> Hall - Lamp1 </option>
+                        <option value="Lamp"> Bedroom1 - Lamp2 </option>
+                        <option value="Lamp"> Front porch - Lamp3 </option>
+                    </optgroup>
+                    <optgroup label="Lights">
+                        <option value="Lights">Kitchen - Main Lights</option>
+                        <option value="Lights">Hall - Main Lights</option>
+                    </optgroup>
+                    
+                </select>
+
+                <label for="editDeviceType">Edit Device Type</label>
+                <select id="editDeviceType" name="editDeviceType" required>
+                    <option value="">Select a device type</option>
+                    <optgroup label="AC">
+                        <option value="Projector">Samsung</option>
+                        <option value="AppleTV">LG</option>
+                    </optgroup>
+                    <optgroup label="Projector">
+                        <option value="Projector">Sony</option>
+                        <option value="Projector">BenQ</option>
+                        <option value="Projector">LG</option>
+                    </optgroup>
+                    <optgroup label="AVR">
+                        <option value="AVR">Marantz</option>
+                        <option value="AVR">Denon</option>
+                    </optgroup>
+                    <optgroup label="TV">
+                        <option value="TV">LG</option>
+                        <option value="TV">Samsung</option>
+                        <option value="TV">Tata Sky</option>
+                    </optgroup>
+                    <optgroup label="AppleTV">
+                        <option value="AppleTV">AppleTV</option>
+                    </optgroup>
+                    <optgroup label="Lights">
+                        <option value="Lights">Lutron</option>
+                    </optgroup>
+                </select>
+                <label for="editTitle">Edit Title</label>
+                <input type="text" id="editTitle" name="editTitle" placeholder="Enter device title" required>
+
+                <label for="editIpAddress">Edit IP Address</label>
+                <input type="text" id="editIpAddress" name="editIpAddress" placeholder="e.g., 192.168.1.1" required>
+
+                <label for="editMacAddress">Edit MAC Address</label>
+                <input type="text" id="editMacAddress" name="editMacAddress" placeholder="e.g., 00:1A:2B:3C:4D:5E" required>
+
+                <label for="editPort">Edit Port</label>
+                <input type="text" id="editPort" name="editPort" placeholder="e.g., 8080" required>
+
+                <label for="editUsername">Username</label>
+                <input type="text" id="editUsername" name="editUsername" placeholder="Enter username" required>
+
+                <label for="editPassword">Password</label>
+                <input type="password" id="editPassword" name="editPassword" placeholder="Enter password" required>
+
+                <label style="align-items:center; font-size: 15px;">
+                    <input type="checkbox" style="width: 15px; height: 15px; margin-right: 5px;">
+                    Global Power Command
+                </label>
+                <p style="font-size: 14px; color: #555; margin-top: -10px;">
+                    Allow this device to power on/off from the global power button
+                </p>
+                
+                <button type="delete">Delete</button>
+                <button type="submit">Save Changes</button>
+                
+            </form>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const form = document.getElementById("editDeviceForm");
+                form.style.display = "block";
+            });
+            
+        </script>
+    </body>
+</html
