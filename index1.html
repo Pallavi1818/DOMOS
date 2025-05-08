@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Device</title>
+        <style>
+            body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #222e3e);
+            color: #ffffff;
+            }
+            header {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            }
+            h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 36px;
+            letter-spacing: 2px;
+            }
+            button {
+            width: auto;
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #4a6572;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            }
+            button:hover {
+            background-color: #202b3c;
+            transform: scale(1.05);
+            }
+            button:active {
+            transform: scale(0.95);
+            }
+            div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 60px;
+            }
+            img#deviceImage {
+            filter: brightness(0.6);
+            }
+        </style>
+    </head>
+    <header style="background-color: #202b3c; color: #fafafa; padding: 20px; text-align: left;">
+    <h1 style="margin: 0; font-size: 32px;">DOM-OS</h1>
+    </header>
+    <body>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 40vh;">
+            <div style="background-color: rgba(255, 255, 255, 0.655); padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+            <button id="openFormButton" style="width: auto; padding: 10px 20px; font-size: 20px; background-color: #202b3c; color: white; border: none; border-radius: 5px;">
+                Add device
+            </button>
+            <button id="editDeviceButton" style="width: auto; padding: 10px 20px; font-size: 20px; background-color: #202b3c; color: white; border: none; border-radius: 5px; margin-top: 10px;">
+                Edit device
+            </button>
+            <button id="availableDeviceButton" style="width: auto; padding: 10px 20px; font-size: 20px; background-color: #202b3c; color: white; border: none; border-radius: 5px; margin-top: 10px;">
+                Show available devices
+            </button>
+            </div>
+        </div>
+        <footer style="text-align: center; padding: 10px; font-size: 10px; background-color: #202b3c; color: #fefeff; position: fixed; bottom: 0; width: 100%;">
+            © 2025 DOM-OS. All rights reserved.
+        </footer>
+        <img src="dashboard.png" loading="lazy" alt="Device Image" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" id="deviceImage">
+
+        <script>
+            document.getElementById('openFormButton').addEventListener('click', function() {
+                window.location.href = 'AddDeviceForm.html';
+            });
+
+            document.getElementById('editDeviceButton').addEventListener('click', function() {
+                window.location.href = 'EditDeviceForm.html';
+            });
+            document.getElementById('availableDeviceButton').addEventListener('click', function() {
+                window.location.href = 'AvailableDevices.html';
+            });
+        </script>
+    </body>
+</html>
