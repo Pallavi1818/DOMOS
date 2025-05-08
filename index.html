@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .flex-container {
+      display: flex;
+      width: fit-content;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+      font-family: Arial, Helvetica, sans-serif;
+      }
+      .flex-container > div:hover {
+      transform: scale(1.05);
+      }
+      .flex-container > div {
+      background-color: #fffcfcbe;
+      margin: 10px;
+      padding: 20px;
+      font-size: 30px;
+      border-radius: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      }
+      img#deviceImage {
+            filter: brightness(0.6);
+      }
+      body, p, h1, span {
+      font-family: Arial, Helvetica, sans-serif;
+      }
+      header {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      .round-logo {
+        background-color: rgba(255, 255, 255, 0.253);
+        border-radius: 35%;
+        padding: 10px;
+        width: 80px;
+        height: 80px;
+      }
+      body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #222e3e);
+      color: #ffffff;
+      }      
+      button {
+      width: auto;
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #4a6572;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.3s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      button:hover {
+      background-color: #202b3c;
+      transform: scale(1.05);
+      }
+      button:active {
+      transform: scale(0.95);
+      }
+    </style>
+  <body>
+    <img src="dashboard.png" alt="Device Image" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" id="deviceImage">
+    <header style="background: linear-gradient(90deg, #2a394f, #1d2a3d); padding: 5px; text-align: center; border-radius: 10px; position: sticky; top: 0; z-index: 10;">
+      <h1 style="font-size: 30px; color: white; font-family: 'Arial', sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+      Available Devices
+      </h1>
+      <p style="color: #d1d1d1; font-size: 18px; margin-top: 5px;">Monitor and control your devices in real-time</p>
+      <button id="openFormButton" style="width: auto; padding: 10px 20px; font-size: 15px; background-color: #202b3c; color: white; border: none; border-radius: 5px;">
+        Add device
+      </button>
+    </header>
+    <div class="flex-container">
+      <div class="lamp-container">
+      <div class="lamp">
+        <img src="lightbulb1.svg"class="round-logo" alt="bulb Icon" style="width: 30px; height: 30px; display: block; margin: 0 auto;">
+        <p style="font-size: 20px; color: black; text-align: center; font-weight: bold; ">Lamp 1<span id="lamp1-status" style="color: rgb(85, 84, 84) "><br><br>On</span></p>
+        <button id="editDeviceButton" style="width: auto; padding: 10px 20px; font-size: 15px; background-color: #202b3c; color: white; border: none; border-radius: 5px; margin-top: 10px;">
+          Edit 
+        </button>
+      </div>
+      </div>
+      <div class="lamp-container">
+      <div class="lamp">
+        <img src="lightbulb1.svg"class="round-logo" alt="bulb Icon" style="width: 30px; height: 30px; display: block; margin: 0 auto;">
+       <p style="font-size: 20px; color: black;text-align: center; font-weight: bold;">Lamp 2 <span id="lamp2-status"  style="color: rgb(85, 84, 84) "><br><br>Closed</span></p>
+        <button id="editDeviceButton" style="width: auto; padding: 10px 20px; font-size: 15px; background-color: #202b3c; color: white; border: none; border-radius: 5px; margin-top: 10px;">
+          Edit 
+        </button>
+      </div>
+      </div>
+      <div class="ac-container">
+      <div class="ac">
+        <img src="snowflake1.svg" class="round-logo" alt="ac Icon" style="width: 30px; height: 30px; display: block; margin: 0 auto;">
+        <p style="font-size: 20px; color: black;text-align: center;  font-weight: bold;">Bedroom 1 - AC <span id="bedroom-ac-status"  style="color: rgb(85, 84, 84)"><br><br>On</span></p>
+        <button id="editDeviceButton" style="width: auto; padding: 10px 20px; font-size: 15px; background-color: #202b3c; color: white; border: none; border-radius: 5px; margin-top: 10px;">
+          Edit 
+      </button>
+      </div>
+      </div>
+      <div class="ac-container">
+      <div class="ac">
+        <img src="snowflake1.svg" class="round-logo" alt="ac Icon" style="width: 30px; height: 30px; display: block; margin: 0 auto;">
+        <p style="font-size: 20px; color: black;text-align: center; font-weight: bold;">Hall - AC<span id="hall-ac-status" style="color: rgb(85, 84, 84) "><br><br>Off</span></p>
+        <button id="editDeviceButton" style="width: auto; padding: 10px 20px; font-size: 15px; background-color: #202b3c; color: white; border: none; border-radius: 5px; margin-top: 10px;">
+          Edit 
+      </button>
+      </div>
+      </div>
+      <div class="tv-container">
+      <div class="tv">
+        <img src="tv-solid.svg" class="round-logo" alt="TV Icon" style="width: 30px; height: 30px; display: block; margin: 0 auto;">
+        <p style="font-size: 20px; color: black; text-align: center; font-weight: bold;">Hall- Samsung TV <span id="tv-status" style="color: rgb(85, 84, 84) "><br><br>Unavailable</span></p>
+        <button id="editDeviceButton" style="width: auto; padding: 10px 20px; font-size: 15px; background-color: #202b3c; color: white; border: none; border-radius: 5px; margin-top: 10px;">
+          Edit 
+      </button>
+      </div>
+      </div>
+    </div>
+    <footer style="text-align: center; padding: 10px; font-size: 10px; background-color: #202b3c; color: #fefeff; position: fixed; bottom: 0; width: 100%;">
+      © 2025 DOM-OS. All rights reserved.
+  </footer>
+  <script>
+    document.getElementById('openFormButton').addEventListener('click', function() {
+        window.location.href = 'AddDeviceForm.html';
+    });
+
+    document.getElementById('editDeviceButton').addEventListener('click', function() {
+        window.location.href = 'EditDeviceForm.html';
+    });
+</script>
+  </body>
+</html>
